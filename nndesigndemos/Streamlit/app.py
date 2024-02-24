@@ -7,7 +7,7 @@ from Book1.Chapter3 import Hamming_classification
 
 # Initialize session state for page navigation
 if 'page' not in st.session_state:
-    st.session_state.page = 'landing'
+    st.session_state.page = 'nnd'
 
 # Function to load a page based on session state
 def load_page(page_name):

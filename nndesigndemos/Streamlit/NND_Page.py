@@ -47,9 +47,6 @@ def run():
         st.session_state.page = 'landing'
         st.rerun()
 
-    # Define the relative path for the images using a raw string
-    image_path = "../Logo/book_logos"
-
     # Title and subtitle
     col1, col2 = st.columns(2)
     with col1:
@@ -69,8 +66,8 @@ def run():
 
     # Function to safely create an image path
     def get_image_path(filename):
-        # Use a raw string for the path
-        return os.path.join(image_path, filename)
+        # Define the relative path for the images/logos
+        return os.path.join("..", "Logo", "book_logos", filename)
 
     def display_chapters_2_to_5():
         with col3:

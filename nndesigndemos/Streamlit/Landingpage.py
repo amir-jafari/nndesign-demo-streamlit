@@ -7,10 +7,8 @@ def run():
     st.set_page_config(layout="wide")
 
     #Path for book images
-    image_path = "../Logo/"
-
     def get_image_path(filename):
-        return os.path.join(image_path, filename)
+        return os.path.join("..", "Logo", filename)
 
     def load_jpg(jpg_file):
         with open(jpg_file, "rb") as f:  # Open the file in binary mode
