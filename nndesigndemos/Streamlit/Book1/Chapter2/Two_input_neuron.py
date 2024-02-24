@@ -22,15 +22,6 @@ def run():
     # Set the layout to "wide"
     st.set_page_config(layout="wide")
 
-    if st.button('Back to NND Page'):
-        st.session_state.page = 'nnd'
-        st.rerun()
-
-
-    # Define the relative path for the images using a raw string
-    image_path ="../Chapters"
-
-    # Load css file
     def load_css(file_name="../css/nnd.css"):
         with open(file_name) as f:
             css_file = f'<style>{f.read()}</style>'
@@ -38,6 +29,13 @@ def run():
 
     css = load_css()
     st.markdown(css, unsafe_allow_html=True)
+
+    if st.button('Back to NND Page'):
+        st.session_state.page = 'nnd'
+        st.rerun()
+
+    # Define the relative path for the images using a raw string
+    image_path ="../Chapters"
 
     def get_image_path(filename):
         # Use a raw string for the path
@@ -72,7 +70,7 @@ def run():
         "tansig": tansig
     }
 
-    col1, col2, col3 = st.columns([9, 0.1, 3])
+    col1, col2, col3 = st.columns([10, 0.1, 3])
 
     with col3:
         st.markdown(load_svg("../Chapters/2/Logo_Ch_2.svg"), unsafe_allow_html=True)
@@ -113,7 +111,7 @@ def run():
                 </div>
                 """, unsafe_allow_html=True)
         st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
-        st.markdown(load_svg("../Figures/nn2d2_1.svg"), unsafe_allow_html=True)
+        st.markdown(load_svg("../Figures/nn2d2-1.svg"), unsafe_allow_html=True)
 
         st.markdown(f'<p class="content-font">Net Input (n): {n}</p>', unsafe_allow_html=True)
         st.markdown(f'<p class="content-font">Output (a): {a}</p>', unsafe_allow_html=True)

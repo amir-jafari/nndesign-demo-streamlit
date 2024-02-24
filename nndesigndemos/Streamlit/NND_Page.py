@@ -40,6 +40,8 @@ def run():
         )
         if demo_option == 'One-Input Neuron':
             st.session_state.page = 'One_input_neuron'
+        elif demo_option == 'Two-Input Neuron':
+            st.session_state.page = 'Two_input_neuron'
 
     if st.button('Back to Home Page'):
         st.session_state.page = 'landing'
@@ -79,7 +81,7 @@ def run():
 
         with col4:
             st.markdown('<p class="content-font">Neuron Model & Network Architecture</p>', unsafe_allow_html=True)
-            create_chapter_demo_selector("Chapter 2", ['One-Input Neuron', 'Two-input Neuron'])
+            create_chapter_demo_selector("Chapter 2", ['One-Input Neuron', 'Two-Input Neuron'])
 
 
             st.markdown('<p class="content-font">An Illustrative Example</p>', unsafe_allow_html=True)
