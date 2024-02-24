@@ -93,14 +93,11 @@ def run():
     if st.button('Back to NND Page'):
         st.session_state.page = 'nnd'
         st.rerun()
-
-    # Define the relative path for the images using a raw string
-    image_path ="../Chapters"
    
 
     def get_image_path(filename):
         # Use a raw string for the path
-        return os.path.join(image_path, filename)
+        return os.path.join("..", "Chapters", "2", filename)
 
     # Define transfer functions
     def purelin(n): return n
@@ -135,7 +132,7 @@ def run():
 
     with col3:
         # Sliders for weight and bias
-        st.markdown(load_svg(get_image_path("2/Logo_Ch_2.svg")), unsafe_allow_html=True)
+        st.markdown(load_svg(get_image_path("Logo_Ch_2.svg")), unsafe_allow_html=True)
         st.markdown('<p class="content-font">Alter the weight, bias and input by moving the sliders.'
                     '<br>'
                     'Pick the transfer function with the f menu.'
@@ -170,7 +167,7 @@ def run():
             </div>
             """, unsafe_allow_html=True)
         st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
-        st.markdown(load_svg(get_image_path("2/SingleInputNeuron.svg")), unsafe_allow_html=True)
+        st.markdown(load_svg(get_image_path("SingleInputNeuron.svg")), unsafe_allow_html=True)
         fig, ax = plt.subplots(figsize=(3,2))
         p = np.arange(-4, 4, 0.1)  # Input range
         func = np.vectorize(transfer_functions[selected_function])

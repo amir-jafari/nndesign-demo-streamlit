@@ -20,9 +20,9 @@ def run():
         '''
         return svg_html
 
-
     #Load css file
-    def load_css(file_name="../css/nnd.css"):
+    css_path = os.path.join("..", "css", "nnd.css")
+    def load_css(file_name=css_path):
         with open(file_name) as f:
             css_file = f'<style>{f.read()}</style>'
         return css_file
