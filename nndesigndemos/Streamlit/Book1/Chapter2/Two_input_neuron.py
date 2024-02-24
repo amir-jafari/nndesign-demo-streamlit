@@ -34,12 +34,10 @@ def run():
         st.session_state.page = 'nnd'
         st.rerun()
 
-    # Define the relative path for the images using a raw string
-    image_path ="../Chapters"
 
     def get_image_path(filename):
-        # Use a raw string for the path
-        return os.path.join(image_path, filename)
+        # Define the relative path for the images using a raw string
+        return os.path.join("..", "Chapters", "2", filename)
 
     # Define transfer functions
     def purelin(n): return n
@@ -72,21 +70,21 @@ def run():
 
     col1, col2, col3 = st.columns([10, 0.1, 3])
 
+
     with col3:
-        st.markdown(load_svg("../Chapters/2/Logo_Ch_2.svg"), unsafe_allow_html=True)
+        st.markdown(load_svg(get_image_path("Logo_Ch_2.svg")), unsafe_allow_html=True)
         st.markdown('<p class="content-font">Alter the input values by moving the sliders '
-                    '<br>'
-                    'Alter the weight and bias in the same way. Use the menu to pick a transfer function.'
-                    '<br>'
-                    ' The net input and the output will respond to each change</p>'
-                    , unsafe_allow_html=True)
+                        '<br>'
+                        'Alter the weight and bias in the same way. Use the menu to pick a transfer function.'
+                        '<br>'
+                        ' The net input and the output will respond to each change</p>'
+                        , unsafe_allow_html=True)
         p1 = st.slider('Input 1 (p1)', min_value=-10, max_value=10, value=0, step=1, key="p1")
         w1 = st.slider('Weight 1 (w1)', min_value=-20, max_value=20, value=10, step=1, key="w1")
         p2 = st.slider('Input (p2)', min_value=-10, max_value=10, value=0, step=1, key="p2")
         w2 = st.slider("Weight 2 (w2)", min_value=-20, max_value=20, value=10, step=1, key="w2")
         bias = st.slider("Bias (b)", min_value=-20, max_value=20, value=0, step=1)
         selected_function = st.selectbox("Transfer Function (f)", options=list(transfer_functions.keys()))
-
         # Calculate net input and output
         n = w1 * p1 + w2 * p2 + bias
         a = transfer_functions[selected_function](n)
@@ -113,8 +111,8 @@ def run():
         st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
         st.markdown(load_svg("../Figures/nn2d2-1.svg"), unsafe_allow_html=True)
 
-        st.markdown(f'<p class="content-font">Net Input (n): {n}</p>', unsafe_allow_html=True)
-        st.markdown(f'<p class="content-font">Output (a): {a}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="content-font">This is the updated Net Input (n): {n}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="content-font">This is the updated Output (a): {a}</p>', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":

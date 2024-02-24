@@ -7,10 +7,8 @@ def run():
     st.set_page_config(layout="wide")
 
     #Path for book images
-    image_path = "../Logo/"
-
     def get_image_path(filename):
-        return os.path.join(image_path, filename)
+        return os.path.join("..", "Logo", filename)
 
     def load_jpg(jpg_file):
         with open(jpg_file, "rb") as f:  # Open the file in binary mode
@@ -23,8 +21,10 @@ def run():
         </div>
         '''
         return jpg_html
+
     #Load css file
-    def load_css(file_name="../css/style.css"):
+    css_path = os.path.join("..", "css", "style.css")
+    def load_css(file_name=css_path):
         with open(file_name) as f:
             css_file = f'<style>{f.read()}</style>'
         return css_file
