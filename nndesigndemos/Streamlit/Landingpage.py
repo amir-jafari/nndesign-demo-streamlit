@@ -23,7 +23,8 @@ def run():
         return jpg_html
 
     #Load css file
-    css_path = os.path.join("..", "css", "style.css")
+   # css_path = os.path.join("..", "css", "style.css")
+    css_path = "../css/style.css"
     def load_css(file_name=css_path):
         with open(file_name) as f:
             css_file = f'<style>{f.read()}</style>'
