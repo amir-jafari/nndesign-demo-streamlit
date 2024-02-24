@@ -34,10 +34,10 @@ def run():
         st.session_state.page = 'nnd'
         st.rerun()
 
-    # Define the relative path for the images using a raw string
-    image_path ="../Chapters"
 
     def get_image_path(filename):
+        # Define the relative path for the images using a raw string
+        image_path = ("..", "Chapters", "2")
         # Use a raw string for the path
         return os.path.join(image_path, filename)
 
@@ -74,7 +74,7 @@ def run():
 
 
     with col3:
-        st.markdown(load_svg("../Chapters/2/Logo_Ch_2.svg"), unsafe_allow_html=True)
+        st.markdown(load_svg(get_image_path("Logo_Ch_2.svg")), unsafe_allow_html=True)
         st.markdown('<p class="content-font">Alter the input values by moving the sliders '
                         '<br>'
                         'Alter the weight and bias in the same way. Use the menu to pick a transfer function.'
