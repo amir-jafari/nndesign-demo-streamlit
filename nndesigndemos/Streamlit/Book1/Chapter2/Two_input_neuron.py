@@ -37,9 +37,7 @@ def run():
 
     def get_image_path(filename):
         # Define the relative path for the images using a raw string
-        image_path = ("..", "Chapters", "2")
-        # Use a raw string for the path
-        return os.path.join(image_path, filename)
+        return os.path.join("..", "Chapters", "2", filename)
 
     # Define transfer functions
     def purelin(n): return n
@@ -113,8 +111,8 @@ def run():
         st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
         st.markdown(load_svg("../Figures/nn2d2-1.svg"), unsafe_allow_html=True)
 
-        st.markdown(f'<p class="content-font">Net Input (n): {n}</p>', unsafe_allow_html=True)
-        st.markdown(f'<p class="content-font">Output (a): {a}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="content-font">This is the updated Net Input (n): {n}</p>', unsafe_allow_html=True)
+        st.markdown(f'<p class="content-font">This is the updated Output (a): {a}</p>', unsafe_allow_html=True)
 
 
 if __name__ == "__main__":
