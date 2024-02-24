@@ -2,6 +2,8 @@ import streamlit as st
 import os
 import base64
 
+path = os.getcwd()
+css_path = f'{os.sep}'.join(path.split(sep=os.sep)[:-1]) + os.sep+ 'css'+ os.sep+ 'style.css'
 def run():
     # Set the layout to "wide"
     st.set_page_config(layout="wide")
@@ -24,7 +26,7 @@ def run():
 
     #Load css file
    # css_path = os.path.join("..", "css", "style.css")
-    css_path = "../css/style.css"
+   #  css_path = "../css/style.css"
     def load_css(file_name=css_path):
         with open(file_name) as f:
             css_file = f'<style>{f.read()}</style>'
