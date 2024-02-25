@@ -37,7 +37,7 @@ def run():
 
     def get_image_path(filename):
         # Define the relative path for the images using a raw string
-        return os.path.join("..", "Chapters", "2", filename)
+        return os.path.join("..", "Figures", filename)
 
     # Define transfer functions
     def purelin(n): return n
