@@ -89,11 +89,12 @@ def run():
 
         </style>
         """, unsafe_allow_html=True)
-
+    #Redirect back to the Chapters page when clicked
     if st.button('Back to NND Page'):
         st.session_state.page = 'nnd'
         st.rerun()
    
+    #Set Image path to load logo and chpater image
 
     def get_image_path(filename):
         # Use a raw string for the path
@@ -168,7 +169,9 @@ def run():
             """, unsafe_allow_html=True)
         st.markdown('<div class="blue-line"></div>', unsafe_allow_html=True)
         st.markdown(load_svg(get_image_path("SingleInputNeuron.svg")), unsafe_allow_html=True)
-        fig, ax = plt.subplots(figsize=(3,2))
+
+        #Plot the neuron
+        fig, ax = plt.subplots()
         p = np.arange(-4, 4, 0.1)  # Input range
         func = np.vectorize(transfer_functions[selected_function])
         out = func(weight * p + bias)
@@ -179,6 +182,7 @@ def run():
         ax.grid(True, which='both')
 
         # Set x and y axis limits
+
         ax.set_xlim([-2.0, 2.0])
         ax.set_ylim([-2.0, 2.0])
 

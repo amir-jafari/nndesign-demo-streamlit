@@ -6,7 +6,6 @@ import os
 def run():
     # Set the layout to "wide"
     st.set_page_config(layout="wide")
-    
     def load_svg(svg_file):
         with open(svg_file, "r", encoding="utf-8") as f:
             svg = f.read()
@@ -42,8 +41,10 @@ def run():
             st.session_state.page = 'One_input_neuron'
         elif demo_option == 'Two-Input Neuron':
             st.session_state.page = 'Two_input_neuron'
+        elif demo_option == 'Gram Schmidt':
+            st.session_state.page = 'Gram_schmidt'
 
-    if st.button('Back to Home Page'):
+    if st.button('Back to Landing Page'):
         st.session_state.page = 'landing'
         st.rerun()
 
@@ -93,7 +94,7 @@ def run():
             create_chapter_demo_selector("Chapter 5", ['Gram Schmidt', 'Reciprocal Basis'])
 
         if st.session_state.page == 'One_input_neuron':
-            st.experimental_rerun()
+            st.rerun()
 
 
     def display_chapters_6_to_9():
