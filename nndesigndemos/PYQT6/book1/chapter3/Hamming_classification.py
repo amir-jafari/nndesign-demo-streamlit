@@ -43,7 +43,7 @@ class HammingClassification(NNDLayout):
         self.axis.scatter(apple[0], apple[1], apple[2], color='orange')
         self.line1, self.line2, self.line3 = None, None, None
         self.axis.view_init(10, 110)
-        self.canvas.draw()
+        self.canvas.draw()0
 
         self.p, self.a1, self.a2, self.fruit, self.label = None, None, None, None, None
 
